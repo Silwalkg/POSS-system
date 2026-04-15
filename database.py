@@ -102,7 +102,9 @@ def init_db():
 
         # seed sample menu items
         sample_items = [
-            ("Rice & Curry",  [("Rice & Curry Plate", 350), ("Chicken Curry Rice", 450), ("Fish Curry Rice", 420)]),
+            ("Rice & Curry",  [("Rice & Curry Plate", 350), ("Chicken Curry Rice", 450), ("Fish Curry Rice", 420),
+                               ("Chicken Fried Rice (Full)", 1600), ("Chicken Fried Rice (Half)", 1200),
+                               ("Mix Fried Rice (Full)", 2200), ("Mix Fried Rice (Half)", 1700)]),
             ("Short Eats",    [("Vegetable Roti", 80), ("Egg Roti", 100), ("Chicken Patty", 120), ("Fish Bun", 90)]),
             ("Beverages",     [("Plain Tea", 60), ("Milk Tea", 80), ("Mango Juice", 150), ("Soft Drink", 120)]),
             ("Desserts",      [("Watalappan", 180), ("Ice Cream", 200), ("Fruit Salad", 160)]),

@@ -100,6 +100,22 @@ def init_db():
         for n in range(1, 11):
             conn.execute("INSERT OR IGNORE INTO tables (number) VALUES (?)", (n,))
 
+        # seed sample menu items
+        sample_items = [
+            ("Rice & Curry",  [("Rice & Curry Plate", 350), ("Chicken Curry Rice", 450), ("Fish Curry Rice", 420)]),
+            ("Short Eats",    [("Vegetable Roti", 80), ("Egg Roti", 100), ("Chicken Patty", 120), ("Fish Bun", 90)]),
+            ("Beverages",     [("Plain Tea", 60), ("Milk Tea", 80), ("Mango Juice", 150), ("Soft Drink", 120)]),
+            ("Desserts",      [("Watalappan", 180), ("Ice Cream", 200), ("Fruit Salad", 160)]),
+        ]
+        for cat_name, items in sample_items:
+            cat = conn.execute("SELECT id FROM categories WHERE name=?", (cat_name,)).fetchone()
+            if cat:
+                for item_name, price in items:
+                    conn.execute(
+                        "INSERT OR IGNORE INTO menu_items (name, category_id, price) VALUES (?,?,?)",
+                        (item_name, cat["id"], price)
+                    )
+
         conn.commit()
 
 

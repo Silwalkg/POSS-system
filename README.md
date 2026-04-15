@@ -71,3 +71,9 @@ happy_palace/
 ## Currency
 
 All prices displayed in **LKR (Sri Lankan Rupee)**.
+
+## Credits
+
+| Name | Field |
+|---|---|
+| Kulan Silva | Computer Security |
